@@ -5,16 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scissors, Paper, Rock!</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="javascript.js" defer></script>
 </head>
 <body>
     <div class="spr">Scissors, Paper, Rock!</div>
-    <div id="buttonContainer">
+    <div class="buttonContainer">
         <button class="btn" id="btnScissors">Scissors</button>
         <button class="btn" id="btnPaper">Paper</button>
         <button class="btn" id="btnRock">Rock</button>
     </div>
-    <div class="opponentChoice">Computer chose...</div>
-    <div class="results">Running total</div>
+    <div class="playerChoice">What will you choose?</div>
+    <div class="opponentChoice">What will the computer chose?</div>
+    <div class="winOrLose">Who will win?</div>
+    <div class="resultsContainer">
+        <button class="results" id="userResults">Your round score</button>
+        <button class="results" id="computerResults">The computer's round score</button>
+    </div>
+    <div class="bestOfFive">The round winner...</div>
+    <div class="gamesContainer">
+        <button class="games" id="userGames">Your games won</button>
+        <button class="games" id="computerGames">The computer's games won</button>
+    </div>
 </body>
 </html>
