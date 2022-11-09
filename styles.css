@@ -1,18 +1,42 @@
+* {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 24px;
+}
+
 body {
     display: flex;
+    align-self: center;
+    justify-self: center;
     flex-direction: column;
 }
 
-.spr, .playerChoice, .opponentChoice, .winOrLose, .bestOfFive {
+.spr, .winOrLose, .bestOfFive {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex: 1;
     margin: 8px;
     padding: 8px;
-    border: 12px;
+    border: 2px solid rgb(11, 62, 62);
     gap: 68px;
-    background-color: rgb(237, 132, 94);
+    background-color: rgb(238, 123, 82);
+}
+
+.choicesContainer {
+  display: flex;
+  justify-items: center;
+}
+
+.playerChoice, .opponentChoice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex: 1;
+  margin: 8px;
+  padding: 8px;
+  border: 2px solid rgb(107, 41, 17);
+  gap: 68px;
+  background-color: rgb(238, 123, 82);
 }
 
 .buttonContainer {
@@ -31,26 +55,27 @@ body {
     flex: 1;
     margin: 8px;
     padding: 8px;
-    border: 16px;
+    border: 2px solid black;
     gap: 36px;
-    border-color: coral;
+    background-color: rgb(47, 194, 145);
 }
 
 .btn {
+    border: 2px solid black;
     align-self: center;
     justify-content: space-evenly;
     flex: 1;
     margin: 8px;
     padding: 8px;
-    border: 16px;
     gap: 36px;
     transition:all 0.07s;
+    background-color: rgb(47, 194, 145);
 }
 
 .activated {
     transform:scale(1.1);
     border-color: teal;
-    box-shadow: 0 0 10px antiquewhite;
+    box-shadow: 0 0 10px solid black;
 }
 
 

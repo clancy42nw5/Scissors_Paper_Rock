@@ -13,6 +13,11 @@ const computerGames = document.querySelector('#computerGames');
 
 let playerSelection = 0;
 
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    this.classList.remove('activated');
+}
+
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -20,26 +25,27 @@ buttons.forEach((button) => {
         button.classList.add('activated');
         playRound();
     });
+    button.addEventListener('transitionend', removeTransition);
 });
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
     if (computerChoice == 0) {
-        return "rock";
+        return "Rock";
     } else if (computerChoice == 1) {
-        return "paper";
+        return "Paper";
     } else if (computerChoice == 2) {
-        return "scissors";
+        return "Scissors";
     }
 }
 
 function getUserChoice() {
     if (playerSelection == "btnRock") {
-        return "rock";
+        return "Rock";
     } else if (playerSelection == "btnPaper") {
-        return "paper";
+        return "Paper";
     } else if (playerSelection == "btnScissors") {
-        return "scissors";
+        return "Scissors";
     }
 }
 
@@ -49,36 +55,35 @@ let userGameScore = 0;
 let computerGameScore = 0;
 
 function playRound() {
-    bestOfFive.textContent = "Best of Five..."
-    //highlight the button that was clicked
+    bestOfFive.textContent = "BEST OF FIVE"
     let playerSelection = getUserChoice();
-    playerChoice.textContent = "You chose " + playerSelection + "!";
+    playerChoice.textContent = playerSelection;
     let computerSelection = getComputerChoice();
-    opponentChoice.textContent = "The computer chose " + computerSelection + "!";
+    opponentChoice.textContent = computerSelection;
     if (playerSelection == computerSelection) {
-        winOrLose.textContent = "It's a tie!";
-    } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        winOrLose.textContent = "You win! Rock beats scissors.";
+        winOrLose.textContent = "It's a tie";
+    } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
+        winOrLose.textContent = "Rock beats Scissors";
         userScore++;
-    } else if (playerSelection == "rock" && computerSelection == "paper") {
-        winOrLose.textContent = "You lose! Paper beats rock.";
+    } else if (playerSelection == "Rock" && computerSelection == "Paper") {
+        winOrLose.textContent = "Paper beats Rock";
         computerScore++;
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
-        winOrLose.textContent = "You win! Paper beats rock.";
+    } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+        winOrLose.textContent = "Paper beats Rock";
         userScore++;
-    } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        winOrLose.textContent = "You lose! Scissors beats paper.";
+    } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
+        winOrLose.textContent = "Scissors beats Paper";
         computerScore++;
-    } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        winOrLose.textContent = "You win! Scissors beats paper.";
+    } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+        winOrLose.textContent = "Scissors beats Paper";
         userScore++;
-    } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        winOrLose.textContent = "You lose! Rock beats scissors.";
+    } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
+        winOrLose.textContent = "Rock beats Scissors";
         computerScore++;
     } 
     userResults.textContent = userScore;
     computerResults.textContent = computerScore;
-    if (userScore == 5) {
+    if (userScore == 3) {
         bestOfFive.textContent = "YOU WIN THE ROUND";
         userGameScore++
         userGames.textContent = userGameScore;
@@ -86,7 +91,7 @@ function playRound() {
         userScore = 0;
         computerScore = 0;
     }
-    if (computerScore == 5) {
+    if (computerScore == 3) {
         bestOfFive.textContent = "YOU LOSE THE ROUND";
         computerGameScore++
         userGames.textContent = userGameScore;
