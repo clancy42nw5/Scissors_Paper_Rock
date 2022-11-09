@@ -1,3 +1,12 @@
+var playerSelection = 0;
+
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.id;
+        playRound();
+    });
+});
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
@@ -10,13 +19,25 @@ function getComputerChoice() {
     }
 }
 
-function getUserChoice() {
+/*function getUserChoice() {
     let userChoice = prompt ("Scissors, paper or rock?");
     if (userChoice.toLowerCase() == ("rock")) {
         return "rock";
     } else if (userChoice.toLowerCase() == ("paper")) {
         return "paper";
     } else if (userChoice.toLowerCase() == ("scissors")) {
+        return "scissors";
+    } else {
+        alert ("Please enter a valid choice");
+    }
+}*/
+
+function getUserChoice() {
+    if (playerSelection == "btnRock") {
+        return "rock";
+    } else if (playerSelection == "btnPaper") {
+        return "paper";
+    } else if (playerSelection == "btnScissors") {
         return "scissors";
     } else {
         alert ("Please enter a valid choice");
@@ -29,6 +50,7 @@ let userScore = 0;
 function playRound() {
     alert("Scissors, paper, rock!");
     let playerSelection = getUserChoice();
+    console.log(playerSelection)
     alert("You chose " + playerSelection);
     let computerSelection = getComputerChoice();
     alert("The computer chose " + computerSelection);
@@ -55,7 +77,7 @@ function playRound() {
     }
 }
 
-function game() {
+/*function game() {
     let counter = 0;
     while (counter <= 4) {
         playRound();
@@ -72,4 +94,7 @@ function game() {
     }
 }
 
-game();
+game(); */
+
+
+
