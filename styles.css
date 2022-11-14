@@ -1,6 +1,54 @@
 * {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.spr, .btn, .playerChoice, .opponentChoice, .winOrLose, .results, .bestOfFive, .games {
   font-size: 24px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited { 
+  text-decoration:none;
+  color: white;
+ }
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.header, .footer {
+  background-color: #1F2937;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex: 1;
+  padding: 12px;
+}
+
+.headerText {
+  font-size: 32px;
+}
+
+.footerText {
+  font-size: 16px;
+}
+
+.header {
+  margin-bottom: 40px;
+  justify-content: space-around;
+}
+
+.footer {
+  margin-top: 40px;
 }
 
 body {
@@ -8,6 +56,13 @@ body {
     align-self: center;
     justify-self: center;
     flex-direction: column;
+}
+.contentContainer {
+  margin-left: 80px;
+  margin-right: 80px;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
 }
 
 .spr, .winOrLose, .bestOfFive {
@@ -17,14 +72,18 @@ body {
     flex: 1;
     margin: 8px;
     padding: 8px;
-    border: 2px solid rgb(11, 62, 62);
     gap: 68px;
-    background-color: rgb(238, 123, 82);
+    border: 2px solid #261D11;
+    background-color: #A6290D;
+    color: #F2E2C4;
+    
 }
 
 .choicesContainer {
   display: flex;
   justify-items: center;
+  font-size: 24px;
+  color: #261D11;
 }
 
 .playerChoice, .opponentChoice {
@@ -34,13 +93,17 @@ body {
   flex: 1;
   margin: 8px;
   padding: 8px;
-  border: 2px solid rgb(107, 41, 17);
   gap: 68px;
-  background-color: rgb(238, 123, 82);
+  border: 2px solid #F2E2C4;
+  color: #F2E2C4;
+  background-color: #261D11;
+  
 }
 
 .buttonContainer {
     display: flex;
+    flex-direction: row;
+    
 }
 
 .resultsContainer, .gamesContainer {
@@ -55,13 +118,23 @@ body {
     flex: 1;
     margin: 8px;
     padding: 8px;
-    border: 2px solid black;
+    border: 2px solid #261D11;
     gap: 36px;
-    background-color: rgb(47, 194, 145);
+}
+
+#userResults, #userGames {
+  background-color: #0477BF;
+  color: #F2E2C4;
+  font-size: 24px;
+}
+
+#computerResults, #computerGames {
+  background-color: #F2B705;
+  font-size: 24px;
 }
 
 .btn {
-    border: 2px solid black;
+    border: 2px solid #261D11;
     align-self: center;
     justify-content: space-evenly;
     flex: 1;
@@ -69,67 +142,12 @@ body {
     padding: 8px;
     gap: 36px;
     transition:all 0.07s;
-    background-color: rgb(47, 194, 145);
+    background-color: #F2E2C4;
+    font-size: 24px;
 }
 
 .activated {
-    transform:scale(1.1);
-    border-color: teal;
-    box-shadow: 0 0 10px solid black;
+    transform:scale(1.15);
+    border-color: #A6290D;
+    box-shadow: 0 0 10px solid #261D11;
 }
-
-
-
-/*
-html {
-  font-size: 10px;
-  background: url('./background.jpg') bottom center;
-  background-size: cover;
-}
-
-body,html {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
-.keys {
-  display: flex;
-  flex: 1;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-
-.key {
-  border: .4rem solid black;
-  border-radius: .5rem;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem .5rem;
-  transition: all .07s ease;
-  width: 10rem;
-  text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.4);
-  text-shadow: 0 0 .5rem black;
-}
-
-.playing {
-  transform: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
-}
-
-kbd {
-  display: block;
-  font-size: 4rem;
-}
-
-.sound {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  color: #ffc600;
-}
-*/
