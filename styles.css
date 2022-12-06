@@ -2,6 +2,14 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root {
+  --bauhaus-red:#A6290D;
+  --bauhaus-blue:#0477BF;
+  --bauhaus-bone:#F2E2C4;
+  --bauhaus-black:#261D11;
+  --bauhaus-yellow:#F2B705;
+}
+
 .spr, .btn, .playerChoice, .opponentChoice, .winOrLose, .results, .bestOfFive, .games {
   font-size: 24px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -73,9 +81,9 @@ body {
     margin: 8px;
     padding: 8px;
     gap: 68px;
-    border: 2px solid #261D11;
-    background-color: #A6290D;
-    color: #F2E2C4;
+    border: 2px solid var(--bauhaus-black);
+    background-color: var(--bauhaus-red);
+    color: var(--bauhaus-bone);
     
 }
 
@@ -83,7 +91,7 @@ body {
   display: flex;
   justify-items: center;
   font-size: 24px;
-  color: #261D11;
+  color: var(--bauhaus-black);
 }
 
 .playerChoice, .opponentChoice {
@@ -94,9 +102,9 @@ body {
   margin: 8px;
   padding: 8px;
   gap: 68px;
-  border: 2px solid #F2E2C4;
-  color: #F2E2C4;
-  background-color: #261D11;
+  border: 2px solid var(--bauhaus-bone);
+  color: var(--bauhaus-bone);
+  background-color: var(--bauhaus-black);
   
 }
 
@@ -118,23 +126,23 @@ body {
     flex: 1;
     margin: 8px;
     padding: 8px;
-    border: 2px solid #261D11;
+    border: 2px solid var(--bauhaus-black);
     gap: 36px;
 }
 
 #userResults, #userGames {
-  background-color: #0477BF;
-  color: #F2E2C4;
+  background-color: var(--bauhaus-blue);
+  color: var(--bauhaus-bone);
   font-size: 24px;
 }
 
 #computerResults, #computerGames {
-  background-color: #F2B705;
+  background-color: var(--bauhaus-yellow);
   font-size: 24px;
 }
 
 .btn {
-    border: 2px solid #261D11;
+    border: 2px solid var(--bauhaus-black);
     align-self: center;
     justify-content: space-evenly;
     flex: 1;
@@ -142,12 +150,12 @@ body {
     padding: 8px;
     gap: 36px;
     transition:all 0.07s;
-    background-color: #F2E2C4;
+    background-color: var(--bauhaus-bone);
     font-size: 24px;
 }
 
 .activated {
     transform:scale(1.15);
-    border-color: #A6290D;
-    box-shadow: 0 0 10px solid #261D11;
+    border-color: var(--bauhaus-red);
+    box-shadow: 0 0 10px solid var(--bauhaus-black);
 }
